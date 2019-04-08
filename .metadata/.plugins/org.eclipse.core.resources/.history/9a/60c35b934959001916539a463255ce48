@@ -1,0 +1,12 @@
+package com.nhutdb.drawingconsole.commands;
+
+import com.nhutdb.drawingconsole.models.Canvas;
+
+public class DrawLineCommand implements Command {
+
+	public Canvas execute() {
+		return null;
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.nhutdb.drawingconsole.commands;
+
+public class Command {
+
+}

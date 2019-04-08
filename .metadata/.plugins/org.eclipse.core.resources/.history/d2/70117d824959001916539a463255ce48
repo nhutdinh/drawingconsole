@@ -1,0 +1,20 @@
+package com.nhutdb.drawingconsole;
+
+import com.nhutdb.drawingconsole.commands.Command;
+import com.nhutdb.drawingconsole.commands.CreateCanvasCommand;
+import com.nhutdb.drawingconsole.models.Canvas;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	Canvas canvas = new Canvas(20,4);
+        Command command = new CreateCanvasCommand(canvas);
+        command.execute();
+        canvas.draw();
+    }
+}

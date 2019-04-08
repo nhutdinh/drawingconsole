@@ -1,0 +1,16 @@
+package com.nhutdb.drawingconsole;
+
+import com.nhutdb.drawingconsole.commands.Command;
+import com.nhutdb.drawingconsole.commands.CreateCanvasCommand;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        Command command = new CreateCanvasCommand();
+    }
+}

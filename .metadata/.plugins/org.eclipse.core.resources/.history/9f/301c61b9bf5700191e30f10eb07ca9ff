@@ -1,0 +1,10 @@
+package com.nhutdb.drawingconsole.commands;
+
+public class CreateCanvas implements Command {
+
+	public void execute() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

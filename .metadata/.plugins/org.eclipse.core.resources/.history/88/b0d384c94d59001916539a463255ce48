@@ -1,0 +1,7 @@
+package com.nhutdb.drawingconsole.commands;
+
+import com.nhutdb.drawingconsole.models.Canvas;
+
+public interface Command {
+	Canvas execute(Canvas canvas);
+}

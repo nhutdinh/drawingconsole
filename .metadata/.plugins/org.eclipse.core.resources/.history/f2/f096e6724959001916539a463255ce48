@@ -1,0 +1,53 @@
+package com.nhutdb.drawingconsole.commands;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import com.nhutdb.drawingconsole.models.Canvas;
+
+public class CreateCanvasCommand implements Command {
+
+	private Canvas canvas;	
+//    private final String             horizontalEdge;
+    private static final char HORIZONTAL_EDGE_CHAR = '-';
+    private static final char VERTICAL_EDGE_CHAR   = '|';
+    
+	public Canvas execute(Canvas canvas) {
+		// TODO Auto-generated method stub
+		return drawCanvas();
+
+	}
+	private Canvas drawCanvas() {
+		for(int i = 0; i < this.canvas.getH(); i++) {
+			
+			for(int j = 0; j < this.canvas.getW(); j ++) {
+				if(i !=0 && j!= 0 && i != this.canvas.getH() - 1 && j != this.canvas.getW() - 1) {
+					this.canvas.setPoint(i, j, ' ');
+				} else if(j == 0 || j == this.canvas.getW() - 1){
+					this.canvas.setPoint(i, j, VERTICAL_EDGE_CHAR);
+				} else {
+					this.canvas.setPoint(i, j, HORIZONTAL_EDGE_CHAR);
+					 
+				}
+				
+			}
+			
+		}
+		return this.canvas;
+	}
+//		StringBuilder builder = new StringBuilder();
+//        builder.append(horizontalEdge).append("\n");
+//        for (int i = 0; i < this.canvas.getH(); i++) {
+//            builder.append(VERTICAL_EDGE_CHAR);
+//            for (int j = 0; j < this.canvas.getW(); j++) {
+//                builder.append(cachedCanvasArray[i][j]);
+//            }
+//            builder.append(VERTICAL_EDGE_CHAR);
+//            builder.append("\n");
+//        }
+//        builder.append(horizontalEdge);
+//        return builder.toString();
+//	}
+
+}
