@@ -1,39 +1,35 @@
 package com.nhutdb.drawingconsole.commands;
 
+import com.nhutdb.drawingconsole.exceptions.InvalidCommandException;
 import com.nhutdb.drawingconsole.models.Canvas;
 
 public class CreateCanvasCommand implements Command {
 
-//    private final String             horizontalEdge;
-    
-    
-	public void execute(Canvas canvas) {
-		// TODO Auto-generated method stub
-		canvas.draw();
-
-	}
-	private void drawCanvas(Canvas canvas) {
-		for(int i = 0; i < canvas.getH(); i++) {
-			
-			for(int j = 0; j < canvas.getW(); j ++) {
-				
-				
-			}
-			
+	Canvas canvas = null;
+	public CreateCanvasCommand(String params) throws InvalidCommandException{
+		try {
+			String[] ps = params.split(" ");
+			int width = Integer.parseInt(ps[0]);
+			int height = Integer.parseInt(ps[1]);
+			this.canvas = createCanvas(width, height);
+		}catch (InvalidCommandException e) {
+			throw e;
+		}catch(Exception ex) {
+			throw new InvalidCommandException("Create Canvas Command - Invalid parameters", "Pleae make sure your input follow this format \n: C with height");
 		}
+		
 	}
-//		StringBuilder builder = new StringBuilder();
-//        builder.append(horizontalEdge).append("\n");
-//        for (int i = 0; i < canvas.getH(); i++) {
-//            builder.append(VERTICAL_EDGE_CHAR);
-//            for (int j = 0; j < canvas.getW(); j++) {
-//                builder.append(cachedCanvasArray[i][j]);
-//            }
-//            builder.append(VERTICAL_EDGE_CHAR);
-//            builder.append("\n");
-//        }
-//        builder.append(horizontalEdge);
-//        return builder.toString();
-//	}
+	
+	
+	public Canvas createCanvas(int width, int height) {
+		return new Canvas(width, height);
+	}
+	public Canvas getCanvas() {
+		return this.canvas;
+	}
 
+	public void execute(Canvas canvas) {
+//		canvas.draw();
+
+	}
 }

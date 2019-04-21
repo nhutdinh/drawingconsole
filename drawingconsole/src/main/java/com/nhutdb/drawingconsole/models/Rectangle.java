@@ -10,6 +10,7 @@ public class Rectangle {
 		this.rb = rb;
 	}
 	public void draw(Canvas canvas) {
+		
 		Line l1 = new Line(this.tl, new Point(this.rb.getX(), this.tl.getY()));
 		Line l2 = new Line(new Point(this.rb.getX(), this.tl.getY()), this.rb);
 		Line l3 = new Line(this.rb, new Point(this.tl.getX(), this.rb.getY()));
